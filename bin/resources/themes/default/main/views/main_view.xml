@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window>
+<VBox width="stretch" height ="stretch">
+  <Label textpadding="60,80,0,0" font="motto" text="这是一段话"  />
+  <!--下半部分-->
+  <HBox>
+    <CefControl name="cef_control"/>
+    <VBox valign="bottom" halign="right" margin="100, 0, 20, 0">
+      <Control valign="top" width="stretch" height="stretch" margin="0,0,0,200"/>
+      <Control valign="bottom"  width="stretch" height="100" margin="10,0,20,20" bkcolor="blue">
+      </Control>
+      <Control valign="bottom"  width="stretch" height="100" margin="10,0,20,80"  bkcolor="black">
+      </Control>
+    </VBox>
+  </HBox>
+</VBox>
+</Window>

@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "*.java": "java",
+        "psm_base.h": "c"
+    }
+}

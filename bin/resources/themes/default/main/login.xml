@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--窗口主内容-->
+<Window size="260,415" caption="0,0,0,35">
+  <VBox bkcolor="bk_wnd_darkcolor" >
+    <HBox width="stretch" height="35" bkcolor="bk_wnd_lightcolor">
+      <!--logo和标题-->
+      <Control width="auto" height="auto" bkimage="psm_logo.png" valign="center" margin="4"/>
+      <Label text="核金手册 v 2.33" valign="center" margin="4"/>
+      <Control />
+      <!--标准窗口按钮三件套-->
+      <Button class="btn_wnd_min" name="minbtn" margin="4,6,0,0"/>
+      <Button class="btn_wnd_close" name="closebtn" margin="4,6,8,0"/>
+    </HBox>
+    <TabBox name="view_switch" mouse="false" mousechild="true" selectedid="0">
+      <!--主登录界面-->
+      <VBox name ="login_panel" fadeinoutxfromleft="true">
+        <!--占位-->
+        <Control width="auto" height="50"  halign="center" valign="center"></Control>
+        <!--登录头像-->
+        <Box width="auto" height="auto" valign="center" halign="center">
+          <Button halign="center" bkimage ="psm_logo_st.png" width="120" height="120" margin="15,8,0,0" borderround="120,120" cursortype="hand"/>
+          <Control  bkimage="mask.png" mouse="false"/>
+        </Box>
+        <!--账户框-->
+        <HBox width="stretch" height="30" >
+          <Control bkimage ="nickname.png" width ="15" height="15" margin ="15,8,0,0"/>
+          <RichEdit class="simple input"  name="account" margin="10,0,25,0" padding="6,6,6" promptmode="true" prompttext="账户名称" promptcolor="lightcolor"/>
+        </HBox>
+        <!--密码框-->
+        <HBox width="stretch" height="30" margin ="0,8,0,0">
+          <Control bkimage ="password_1.png" width ="15" height="15" margin ="15,8,0,0"/>
+          <RichEdit class="simple input"  name="pswd" margin="10,0,25,0" padding="6,6,6" password="true" promptmode="true" prompttext="输入密码" promptcolor="lightcolor"/>
+        </HBox>
+        <!--登录-->
+        <Button class="btn_global_blue_80x30" name="login" margin="0,20,0,10" width="120" text="登录" halign="center" />
+        <!--注册-->
+        <Button class="btn_global_white_80x30" margin="0,0,0,0" width="120" text="注册" halign="center" >
+          <Event type="buttonup" receiver="view_switch" applyattribute="selectedid=&quot;1&quot;"/>
+        </Button>
+        <!--忘记密码-->
+        <Label name="forget" width="stretch" text="忘记密码？" normaltextcolor="gray" hottextcolor="gray" pushedtextcolor="blue" align="center" cursortype="hand" margin="0,8">
+          <Event type="buttonup" receiver="view_switch" applyattribute="selectedid=&quot;2&quot;"/>
+        </Label>
+      </VBox>
+      <!--注册界面-->
+      <VBox name ="signup_panel" visible ="false" fadeinoutxfromright="true">
+        <!--返回标识-->
+        <Label text="&lt; 返回登录" halign ="left" cursortype="hand" normaltextcolor="light_gray" hottextcolor="gray" pushedtextcolor="blue" textpadding="8,8,2,2">
+          <Event type="buttonup" receiver="view_switch" applyattribute="selectedid=&quot;0&quot;"/>
+        </Label>
+        <!--登录头像-->
+        <Control  width="80" height="80" margin="0,10,0,0" bkimage="psm_logo_80x80.png" halign="center" valign="center"></Control>
+        <!--账户框-->
+        <HBox width="stretch" height="30" >
+          <Control bkimage ="nickname.png" width ="15" height="15" margin ="15,8,0,0"/>
+          <RichEdit class="simple input"  name="account_signup" bordersize="1" borderround="2, 2" margin="10,0,25,0" padding="6,6,6" promptmode="true" prompttext="注册账户名称 10位以内" promptcolor="lightcolor"/>
+        </HBox>
+        <!--密码框-->
+        <HBox width="stretch" height="30" margin ="0,8,0,0">
+          <Control bkimage ="password_1.png" width ="15" height="15" margin ="15,8,0,0"/>
+          <RichEdit class="simple input"  name="pswd_signup"  bordersize="1" borderround="2, 2" margin="10,0,25,0" padding="6,6,6" password="true" promptmode="true" prompttext="注册密码 8-16位" promptcolor="lightcolor"/>
+        </HBox>
+        <!--确认密码框-->
+        <HBox width="stretch" height="30" margin ="0,8,0,0">
+          <Control bkimage ="password_1.png" width ="15" height="15" margin ="15,8,0,0"/>
+          <RichEdit class="simple input"  name="pswd_confirm" bordersize="1" borderround="2, 2" margin="10,0,25,0" padding="6,6,6" password="true" promptmode="true" prompttext="确认密码" promptcolor="lightcolor"/>
+        </HBox>
+        <!--密保问题框-->
+        <HBox width="stretch" height="30" margin ="0,8,0,0">
+          <Control bkimage ="logs.png" width ="15" height="15" margin ="15,8,0,0"/>
+          <RichEdit class="simple input" name="secure_question" bordersize="1" borderround="2, 2" margin="10,0,25,0" padding="6,6,6" promptmode="true" prompttext="密保问题 25位以内" promptcolor="lightcolor"/>
+        </HBox>
+        <!--密保答案框-->
+        <HBox width="stretch" height="30" margin ="0,8,0,0">
+          <Control bkimage ="logs.png" width ="15" height="15" margin ="15,8,0,0"/>
+          <RichEdit class="simple input"  name="secure_answer" bordersize="1" borderround="2, 2" margin="10,0,25,0" padding="6,6,6" promptmode="true" prompttext="密保答案 25位以内" promptcolor="lightcolor"/>
+        </HBox>
+        <!--账号注册按钮-->
+        <Button class="btn_global_blue_80x30" name="signup_account" margin="0,20,0,10" width="120" text="注册账号" halign="center" />
+      </VBox>
+      <VBox name ="forget_panel" visible ="false" fadeinoutxfromright ="true">
+        <!--返回标识-->
+        <Label text="&lt; 返回登录"  halign ="left" cursortype="hand" normaltextcolor="light_gray" hottextcolor="gray" pushedtextcolor="blue" textpadding="8,8,2,2">
+          <Event type="buttonup" receiver="view_switch" applyattribute="selectedid=&quot;0&quot;"/>
+        </Label>
+        <!--登录头像-->
+        <Control  width="80" height="80" margin="0,10,0,0" bkimage="psm_logo_80x80.png" halign="center" valign="center"></Control>
+        <!--账户选择-->
+        <HBox width="stretch" height="35" margin ="0,8,0,0">
+          <Control bkimage ="nickname.png" width ="15" height="15" margin ="15,10,0,0"/>
+          <Combo class="list" name="accounts" height="stretch" margin="10,8,25,0"  bkimage="file='../public/combo/normal.png' corner='5,5,30,5'"/>
+        </HBox>
+        <!--密保问题框-->
+        <HBox width="stretch" height="30" margin ="0,8,0,0">
+          <Control bkimage ="logs.png" width ="15" height="15" margin ="15,8,0,0"/>
+          <Label name="secure_question_verify" text="......" normaltextcolor="light_gray" textpadding="15,8,6" />
+        </HBox>
+        <!--密保答案框-->
+        <HBox width="stretch" height="30" margin ="0,8,0,0">
+          <Control bkimage ="logs.png" width ="15" height="15" margin ="15,8,0,0"/>
+          <RichEdit class="simple input"  name="secure_answer_verify" bordersize="1" borderround="2, 2" margin="10,0,25,0" padding="6,6,6" promptmode="true" prompttext="密保答案 25位以内" promptcolor="lightcolor"/>
+        </HBox>
+        <!--账号找回按钮-->
+        <Button class="btn_global_red_80x30" name="check_verify" margin="0,20,0,10" width="120" text="尝试找回" halign="center" />
+        <Label name="pswd_found" halign="center" text="" normaltextcolor="light_gray" textpadding="15,8,6" />
+      </VBox>
+    </TabBox>
+  </VBox>
+</Window>
