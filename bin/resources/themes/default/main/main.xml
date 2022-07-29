@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window size="800,600" caption="0,0,0,35">
+  <VBox bkcolor="bk_wnd_darkcolor">
+    <HBox width="stretch" height="35" bkcolor="bk_wnd_lightcolor">
+      <!--logo和标题-->
+      <Control width="auto" height="auto" bkimage="psm_logo.png" valign="center" margin="8"/>
+      <Label text="核金手册 v 2.33" valign="center" margin="8"/>
+      <Control />
+      <!--标准窗口按钮三件套-->
+      <Button class="btn_wnd_min" name="minbtn" margin="4,6,0,0"/>
+      <Box width="21" margin="4,6,0,0">
+        <Button class="btn_wnd_max" name="maxbtn"/>
+        <Button class="btn_wnd_restore" name="restorebtn" visible="false"/>
+      </Box>
+      <Button class="btn_wnd_close" name="closebtn" margin="4,6,8,0"/>
+    </HBox>
+    <!--左右的两个大布局-->
+    <HBox>
+      <!--左侧功能栏-->
+      <VBox  width="75" height ="stretch" bkcolor="bk_wnd_darkcolor" halign="left" >
+        <Control height="20" />
+        <!--账号-->
+        <OptionBox  group="modules" height="60"  cursortype="hand"  name="account">
+          <Event type="select" receiver=".\select_tab" applyattribute="selectedid=&quot;0&quot;" />
+          <Event type="select" receiver="view_switch" applyattribute="selectedid=&quot;0&quot;" />
+          <Event type="unselect" receiver=".\select_tab" applyattribute="selectedid=&quot;1&quot;" />
+          <TabBox mouse="false" mousechild="false" name="select_tab" selectedid="1">
+            <HBox halign="center" fadeinoutxfromleft="true" width="60" bkcolor="bk_wnd_lightcolor">
+              <VBox valign="center" >
+                <Control />
+                <Control  bkimage="icons\account.png" width="20" height="17" halign="center"  />
+                <Control />
+              </VBox>
+            </HBox>
+            <HBox halign="center" width="60" bkcolor="bk_wnd_darkcolor">
+              <VBox halign="left" valign="center" >
+                <Control />
+                <HBox>
+                  <Control  bkimage="icons\account.png" width="18" height="16" halign="center"  />
+                  <Label text="账户" textpadding="5,0,0,0"/>
+                </HBox>
+                <Control />
+              </VBox>
+            </HBox>
+          </TabBox>
+        </OptionBox>
+        <!--主界面-->
+        <OptionBox group="modules" height="60" margin="0,5,0,0" cursortype="hand"  name="homeview">
+          <Event type="select" receiver=".\select_tab" applyattribute="selectedid=&quot;0&quot;" />
+          <Event type="select" receiver="view_switch" applyattribute="selectedid=&quot;1&quot;" />
+          <Event type="unselect" receiver=".\select_tab" applyattribute="selectedid=&quot;1&quot;" />
+          <TabBox mouse="false" mousechild="false" name="select_tab" selectedid="0">
+            <HBox halign="center" fadeinoutxfromleft="true" width="60" bkcolor="bk_wnd_lightcolor">
+              <VBox valign="center" >
+                <Control />
+                <Control  bkimage="icons\home.png" width="20" height="18" halign="center"  />
+                <Control />
+              </VBox>
+            </HBox>
+            <HBox halign="center" width="60" bkcolor="bk_wnd_darkcolor">
+              <VBox halign="left" valign="center" >
+                <Control />
+                <HBox>
+                  <Control  bkimage="icons\home.png" width="18" height="16" halign="center"  />
+                  <Label text="主页" textpadding="5,0,0,0"/>
+                </HBox>
+                <Control />
+              </VBox>
+            </HBox>
+          </TabBox>
+        </OptionBox>
+        <!--日程-->
+        <OptionBox group="modules" height="60" margin="0,5,0,0" cursortype="hand"  name="op1">
+          <Event type="select" receiver=".\select_tab" applyattribute="selectedid=&quot;0&quot;" />
+          <Event type="select" receiver="view_switch" applyattribute="selectedid=&quot;2&quot;" />
+          <Event type="unselect" receiver=".\select_tab" applyattribute="selectedid=&quot;1&quot;" />
+          <TabBox mouse="false" mousechild="false" name="select_tab" selectedid="1">
+            <HBox halign="center" fadeinoutxfromleft="true" width="60" bkcolor="bk_wnd_lightcolor">
+              <VBox valign="center" >
+                <Control />
+                <Control  bkimage="icons\schedule.png" width="20" height="22" halign="center"  />
+                <Control />
+              </VBox>
+            </HBox>
+            <HBox halign="center" width="60" bkcolor="bk_wnd_darkcolor">
+              <VBox halign="left" valign="center" >
+                <Control />
+                <HBox>
+                  <Control  bkimage="icons\schedule.png" width="18" height="20" halign="center"  />
+                  <Label text="日程" textpadding="5,0,0,0"/>
+                </HBox>
+                <Control />
+              </VBox>
+            </HBox>
+          </TabBox>
+        </OptionBox>
+        <!--通讯录-->
+        <OptionBox group="modules" height="60" margin="0,5,0,0" cursortype="hand"  name="op2">
+          <Event type="select" receiver=".\select_tab" applyattribute="selectedid=&quot;0&quot;" />
+          <Event type="select" receiver="view_switch" applyattribute="selectedid=&quot;3&quot;" />
+          <Event type="unselect" receiver=".\select_tab" applyattribute="selectedid=&quot;1&quot;" />
+          <TabBox mouse="false" mousechild="false" name="select_tab" selectedid="1">
+            <HBox halign="center" fadeinoutxfromleft="true" width="60" bkcolor="bk_wnd_lightcolor">
+              <VBox valign="center" >
+                <Control />
+                <Control  bkimage="icons\addrbook.png" width="20" height="22" halign="center"  />
+                <Control />
+              </VBox>
+            </HBox>
+            <HBox halign="center" width="60" bkcolor="bk_wnd_darkcolor">
+              <VBox halign="left" valign="center" >
+                <Control />
+                <HBox>
+                  <Control  bkimage="icons\addrbook.png" width="18" height="20" halign="center"  />
+                  <Label text="通讯录" textpadding="5,0,0,0"/>
+                </HBox>
+                <Control />
+              </VBox>
+            </HBox>
+          </TabBox>
+        </OptionBox>
+        <!--记账-->
+        <OptionBox group="modules" height="60" margin="0,5,0,0" cursortype="hand"  name="op2">
+          <Event type="select" receiver=".\select_tab" applyattribute="selectedid=&quot;0&quot;" />
+          <Event type="select" receiver="view_switch" applyattribute="selectedid=&quot;4&quot;" />
+          <Event type="unselect" receiver=".\select_tab" applyattribute="selectedid=&quot;1&quot;" />
+          <TabBox mouse="false" mousechild="false" name="select_tab" selectedid="1">
+            <HBox halign="center" fadeinoutxfromleft="true" width="60" bkcolor="bk_wnd_lightcolor">
+              <VBox valign="center" >
+                <Control />
+                <Control  bkimage="icons\finance.png" width="20" height="22" halign="center"  />
+                <Control />
+              </VBox>
+            </HBox>
+            <HBox halign="center" width="60" bkcolor="bk_wnd_darkcolor">
+              <VBox halign="left" valign="center" >
+                <Control />
+                <HBox>
+                  <Control  bkimage="icons\finance.png" width="18" height="20" halign="center"  />
+                  <Label text="记账" textpadding="5,0,0,0"/>
+                </HBox>
+                <Control />
+              </VBox>
+            </HBox>
+          </TabBox>
+        </OptionBox>
+        <!--健身-->
+        <OptionBox group="modules" height="60" margin="0,5,0,0" cursortype="hand"  name="op3">
+          <Event type="select" receiver=".\select_tab" applyattribute="selectedid=&quot;0&quot;" />
+          <Event type="select" receiver="view_switch" applyattribute="selectedid=&quot;5&quot;" />
+          <Event type="unselect" receiver=".\select_tab" applyattribute="selectedid=&quot;1&quot;" />
+          <TabBox mouse="false" mousechild="false" name="select_tab" selectedid="1">
+            <HBox halign="center" fadeinoutxfromleft="true" width="60" bkcolor="bk_wnd_lightcolor">
+              <VBox valign="center" >
+                <Control />
+                <Control  bkimage="icons\fit.png" width="20" height="20" halign="center"  />
+                <Control />
+              </VBox>
+            </HBox>
+            <HBox halign="center" width="60" bkcolor="bk_wnd_darkcolor">
+              <VBox halign="left" valign="center" >
+                <Control />
+                <HBox>
+                  <Control  bkimage="icons\fit.png" width="18" height="18" halign="center"  />
+                  <Label text="健身" textpadding="5,0,0,0"/>
+                </HBox>
+                <Control />
+              </VBox>
+            </HBox>
+          </TabBox>
+        </OptionBox>
+        <!--密码-->
+        <OptionBox group="modules" height="60" margin="0,5,0,0" cursortype="hand"  name="op4">
+          <Event type="select" receiver=".\select_tab" applyattribute="selectedid=&quot;0&quot;" />
+          <Event type="select" receiver="view_switch" applyattribute="selectedid=&quot;6&quot;" />
+          <Event type="unselect" receiver=".\select_tab" applyattribute="selectedid=&quot;1&quot;" />
+          <TabBox mouse="false" mousechild="false" name="select_tab" selectedid="1">
+            <HBox halign="center" fadeinoutxfromleft="true" width="60" bkcolor="bk_wnd_lightcolor">
+              <VBox valign="center" >
+                <Control />
+                <Control  bkimage="icons\pswd.png" width="20" height="21" halign="center"  />
+                <Control />
+              </VBox>
+            </HBox>
+            <HBox halign="center" width="60" bkcolor="bk_wnd_darkcolor">
+              <VBox halign="left" valign="center" >
+                <Control />
+                <HBox>
+                  <Control  bkimage="icons\pswd.png" width="18" height="19" halign="center"  />
+                  <Label text="密码" textpadding="5,0,0,0"/>
+                </HBox>
+                <Control />
+              </VBox>
+            </HBox>
+          </TabBox>
+        </OptionBox>
+      </VBox>
+      <!--右侧功能界面-->
+      <VBox  width="stretch" height ="stretch" bkcolor="bk_wnd_lightcolor" halign="right" margin="0,0,0,0">
+        <TabBox name="view_switch" mouse="false" mousechild="true" selectedid="1">
+          <!--账户-->
+          <Box name="account_container" fadeinoutyfromtop="true" width="stretch" height ="stretch">
+          </Box>
+          <!--主界面 含有CEF控件不能被加入解析-->
+          <Box name="main_container" fadeinoutyfromtop="true" width="stretch" height ="stretch">
+            <CefControl name="cef_control"/>
+          </Box>
+          <!--日程-->
+          <Box name="schedule_container" fadeinoutyfromtop="true" width="stretch" height ="stretch">
+          </Box>
+          <!--通讯录-->
+          <Box name="addrbook_container" fadeinoutyfromtop="true" width="stretch" height ="stretch">
+          </Box>
+          <!--记账-->
+          <Box name="finance_container" fadeinoutyfromtop="true" width="stretch" height ="stretch">
+          </Box>
+          <!--健身-->
+          <Box name="fit_container" fadeinoutyfromtop="true" width="stretch" height ="stretch">
+          </Box>
+          <!--密码-->
+          <Box name="pswd_container" fadeinoutyfromtop="true" width="stretch" height ="stretch">
+          </Box>
+        </TabBox>
+      </VBox>
+    </HBox>
+  </VBox>
+</Window>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>homepage</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .calendar {
+      margin: 1vh auto;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      box-sizing: border-box;
+      background-color: bisque;
+      line-height: 1.5em;
+      border-radius: 10px;
+      width: 200px;
+      overflow: hidden;
+    }
+
+    h4 {
+      color: bisque;
+      margin: 25vh 0 auto;
+      font-size: 1em;
+      text-align: center;
+    }
+
+    .calendar #month {
+      padding: 20px 0;
+      position: relative;
+      color: bisque;
+      background-color: crimson;
+      font-size: 1.4em;
+      font-weight: bold;
+      box-shadow: 0 5px 10px rgba(151, 13, 41, 0.534);
+    }
+
+    .calendar #day {
+      line-height: 2em;
+      font-size: 1.3em;
+    }
+
+    .calendar #num {
+      line-height: 0.8em;
+      font-size: 4em;
+      font-weight: 500;
+    }
+
+    .calendar #year {
+      font-size: 1em;
+      line-height: 2em;
+      font-weight: 3;
+    }
+
+    .time {
+      display: flex;
+      text-align: center;
+      flex-direction: column;
+      width: 200px;
+      color: bisque;
+      margin: 5px auto;
+      letter-spacing: 5px;
+    }
+
+    .time h6 {
+      margin: 0 auto;
+      color: brown;
+      background-color: bisque;
+      padding: 0.5em 0;
+      width: 60%;
+      border-radius: 30px;
+    }
+
+    .time p {
+      padding: 0.4em 0;
+    }
+  </style>
+
+  <script>
+    window.console = window.console || function (t) {};
+  </script>
+
+
+
+  <script>
+    if (document.location.search.match(/type=embed/gi)) {
+      window.parent.postMessage("resize", "*");
+    }
+  </script>
+</head>
+
+<body style="overflow-x:hidden; overflow-y: hidden;">
+
+  <img src="https://tenapi.cn/bing/" >
+  <div style="position: fixed; top: 20px; left: 25px; width: 100%;">
+    <span id="jinrishici-sentence"
+      style="font-size: 40px; font-weight: bold; color:#1E1E1E; text-shadow: 5px 5px 5px lightslategray ;"></span>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+  </div>
+  <div style="position: fixed; bottom: 220px; left: 40px; width: 100%;">
+    <div class="calendar">
+    <p id="month"></p>
+    <p id="day"></p>
+    <p id="num"></p>
+    <p id="year"></p>
+  </div>
+  <div class="time">
+    <h6>TIME NOW</h6>
+    <p id="h"></p>
+  </div>
+  <script
+    src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js">
+  </script>
+
+
+  <script id="rendered-js">
+    const lang = navigator.language;
+
+    function setDate() {
+      let date = new Date();
+      // calendar
+      let month = date.getMonth();
+      let num = date.getDate();
+      let day = date.toLocaleString(lang, {
+        weekday: "long"
+      });
+      let monthName = date.toLocaleString(lang, {
+        month: "long"
+      });
+      let year = date.getFullYear();
+      // clock
+      let hour = date.getHours();
+      let minute = date.getMinutes();
+      let second = date.getSeconds();
+      let period = "AM";
+      if (hour >= 12) {
+        period = "PM";
+      }
+      if (hour > 12) {
+        hour = hour - 12;
+      }
+      if (minute < 10) {
+        minute = "0" + minute;
+      }
+      if (second < 10) {
+        second = "0" + second;
+      }
+
+      document.querySelector("#month").innerHTML = monthName;
+      document.querySelector("#day").innerHTML = day;
+      document.querySelector("#num").innerHTML = num;
+      document.querySelector("#year").innerHTML = year;
+      document.querySelector(
+        "#h").
+      innerHTML = `${hour} : ${minute} : ${second} ${period}`;
+    }
+    setInterval(setDate, 1000);
+    setDate();
+    //# sourceURL=pen.js
+  </script>
+
+  <script language=JavaScript>
+    //Disable right mouse click Script
+    //By Geek Site.in
+
+
+    var message = "WEBPAGE PROTECTED! SELETION, RIGHT CLICK, CURSOR IS DISABLED";
+
+    ///////////////////////////////////
+    function clickIE4() {
+      if (event.button == 2) {
+        alert(message);
+        return false;
+      }
+    }
+
+    function clickNS4(e) {
+      if (document.layers || document.getElementById && !document.all) {
+        if (e.which == 2 || e.which == 3) {
+          alert(message);
+          return false;
+        }
+      }
+    }
+
+    if (document.layers) {
+      document.captureEvents(Event.MOUSEDOWN);
+      document.onmousedown = clickNS4;
+    } else if (document.all && !document.getElementById) {
+      document.onmousedown = clickIE4;
+    }
+
+    document.oncontextmenu = new Function("alert(message);return false")
+
+    // --> 
+  </script>
+  <script>
+    document.onkeydown = function (e) {
+      if (e.ctrlKey &&
+        (e.keyCode === 85)) {
+        return false;
+      }
+    };
+  </script>
+  <script>
+    document.onkeydown = function (e) {
+      if (e.ctrlKey &&
+        (e.keyCode === 85)) {
+        return false;
+      }
+    };
+  </script>
+  </div>
+  <div style="position: fixed; left: 40px; bottom: 80px; width: 100%;">
+    <div id="he-plugin-standard"></div>
+  </div>
+  <script>
+    WIDGET = {
+      "CONFIG": {
+        "layout": "1",
+        "width": "450",
+        "height": "150",
+        "background": "1",
+        "dataColor": "FFFFFF",
+        "language": "zh",
+        "key": "b8ee1565f45d450ab982f7bc0aa04007"
+      }
+    }
+  </script>
+  <script src="https://widget.qweather.net/standard/static/js/he-standard-common.js?v=2.0"></script>
+
+</body>
+
+</html>

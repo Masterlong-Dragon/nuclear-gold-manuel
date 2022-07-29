@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window>
+  <VBox width="stretch" height ="stretch">
+    <HBox>
+      <!--修改-->
+      <VBox width="270" bordersize="1" bordercolor="splitline_level2">
+        <Box bordersize="1" bordercolor="splitline_level2" height="35" margin="0,0,0,5">
+          <Label text="修改账户个人信息" textpadding="0,10,0,10" normaltextcolor="dark_gray" halign="center" />
+        </Box>
+        <!--账户框-->
+        <HBox width="stretch" height="30" >
+          <Control bkimage ="nickname.png" width ="15" height="15" margin ="15,8,0,0"/>
+          <RichEdit class="simple input"  name="account_signup" bordersize="1" borderround="2, 2" margin="10,0,25,0" padding="6,6,6" promptmode="true" prompttext="注册账户名称 10位以内" promptcolor="lightcolor"/>
+        </HBox>
+        <!--密码框-->
+        <HBox width="stretch" height="30" margin ="0,8,0,0">
+          <Control bkimage ="password_1.png" width ="15" height="15" margin ="15,8,0,0"/>
+          <RichEdit class="simple input"  name="pswd_signup"  bordersize="1" borderround="2, 2" margin="10,0,25,0" padding="6,6,6" promptmode="true" prompttext="注册密码 8-16位" promptcolor="lightcolor"/>
+        </HBox>
+        <!--密保问题框-->
+        <HBox width="stretch" height="30" margin ="0,8,0,0">
+          <Control bkimage ="logs.png" width ="15" height="15" margin ="15,8,0,0"/>
+          <RichEdit class="simple input" name="secure_question" bordersize="1" borderround="2, 2" margin="10,0,25,0" padding="6,6,6" promptmode="true" prompttext="密保问题 25位以内" promptcolor="lightcolor"/>
+        </HBox>
+        <!--密保答案框-->
+        <HBox width="stretch" height="30" margin ="0,8,0,0">
+          <Control bkimage ="logs.png" width ="15" height="15" margin ="15,8,0,0"/>
+          <RichEdit class="simple input"  name="secure_answer" bordersize="1" borderround="2, 2" margin="10,0,25,0" padding="6,6,6" promptmode="true" prompttext="密保答案 25位以内" promptcolor="lightcolor"/>
+        </HBox>
+        <!--账号注册按钮-->
+        <Button class="btn_global_blue_80x30" name="upd_account" margin="0,20,0,10" width="120" text="更新账号信息" halign="center" />
+      </VBox>
+      <!--关于-->
+      <VBox bordersize="1" bordercolor="splitline_level2">
+        <Control halign ="center" bkimage="psm_logo_about.png" width="300" height="300" />
+        <Label text ="核金手册" font="system_22" normaltextcolor="gray" halign="center" textpadding ="0,10,0,10"/>
+        <Label text ="v 2.33" font="system_18" normaltextcolor="light_gray" halign="center" textpadding ="0,10,0,10"/>
+        <Label text ="关于我们" font="system_20" normaltextcolor="gray" halign="center" textpadding ="0,10,0,10"/>
+        <Label text ="开发者:  2022 SCU 实训3组 " font="system_20" normaltextcolor="light_gray" halign="center" textpadding ="0,10,0,10"/>
+      </VBox>
+    </HBox>
+  </VBox>
+</Window>
